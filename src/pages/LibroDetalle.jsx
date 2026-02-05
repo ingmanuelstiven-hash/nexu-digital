@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 import Header from "../components/header";
 import Footer from "../components/footer";
-import "../styles/libroDetalle.css";
+import "../styles/librodetalle.css";
 import { useCart } from "../contexts/CartContext";
 
 
