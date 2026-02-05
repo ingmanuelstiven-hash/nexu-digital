@@ -1,0 +1,273 @@
+
+:root{
+  --accent: #1e4a84;
+  --accent-dark: #163a6a;
+  --muted: #6b7280;
+  --card-shadow: 0 6px 18px rgba(16,24,40,0.06);
+  --surface: #fff;
+  --bg: #fafafa;
+  --duration: 350ms;
+}
+
+
+.biblioteca-page .biblioteca-main {
+  display: flex;
+  gap: 32px;
+  width: 100%;
+  max-width: 1500px; /* más amplio */
+  margin: 20px auto;
+  padding: 0 30px;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+
+.filters-sidebar {
+  width: 260px;
+  background: var(--surface);
+  border: 1px solid #e6e6e6;
+  padding: 14px;
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
+  transition: width var(--duration) ease, transform var(--duration) ease, opacity var(--duration) ease;
+  position: sticky;
+  top: 80px;
+  height: fit-content;
+  z-index: 100;
+}
+
+
+.filters-sidebar.closed {
+  width: 56px;
+  padding: 6px;
+  overflow: visible;
+  text-align: center;
+  height: 56px;
+  position: fixed;
+  left: 14px;
+  top: 120px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--card-shadow);
+  background: var(--surface);
+  border: 1px solid #e6e6e6;
+  z-index: 1100;
+  transition: transform 220ms ease, width 220ms ease, height 220ms ease, opacity 220ms ease;
+}
+
+/* Ocultar contenido interno cuando está cerrado (solo icono visible) */
+.filters-sidebar.closed .filters-top .filters-title,
+.filters-sidebar.closed .filter-section,
+.filters-sidebar.closed .filter-actions,
+.filters-sidebar.closed .price-row,
+.filters-sidebar.closed select,
+.filters-sidebar.closed input[type="range"],
+.filters-sidebar.closed .small-muted {
+  display: none !important;
+}
+
+/* Top del sidebar */
+.filters-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.filters-sidebar h3 { 
+  margin: 0; font-size: 18px; font-weight: 800;
+ }
+
+/* Toggle button estilo */
+.sidebar-toggle {
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  padding: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.sidebar-toggle:hover {
+   background: #f3f4f6; box-shadow: var(--card-shadow); 
+  }
+
+/* SECCIONES DE FILTROS */
+.filter-section {
+  margin-top: 12px;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 12px;
+}
+.filter-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+.filter-label input[type="checkbox"] {
+   width: 16px; height: 16px; 
+  }
+
+.price-row { 
+  display: flex; align-items: center; gap: 10px;
+ }
+.price-value { 
+  font-weight: 700; font-size: 8px; width: 84px;
+ }
+
+/* acciones del sidebar */
+.filter-actions { 
+  margin-top: 14px; display: flex; justify-content: center; 
+}
+.btn-clear {
+  background: #f3f4f6;
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+/* ÁREA DE LIBROS (grid) */
+.books-grid-section { 
+  flex: 1; min-width: 0; transition: padding-left var(--duration) ease; 
+}
+
+.books-grid-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  gap: 12px;
+}
+.btn-toggle-sidebar {
+  background: transparent;
+  border: 1px solid #e6e6e6;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Grid: tarjetas */
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 18px;
+}
+
+/* Tarjeta / Card */
+.book-card {
+  background: var(--surface);
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-cover {
+  height: 260px;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-cover img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.card-body {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.book-title { 
+  font-size: 15px; font-weight: 800; margin: 0 0 2px 0;
+ }
+.book-author {
+   font-size: 13px; color: var(--muted); margin: 0;
+   }
+.book-price { 
+  font-size: 15px; font-weight: 800; color: #111827;
+ }
+
+/* ACCIONES DE LA CARD - ahora en columna */
+.card-actions {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column; 
+  gap: 8px;
+  align-items: stretch;
+}
+
+/* Botones en columna: full-width */
+.btn-detail, .btn-add {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 14px;
+  width: 100%;           
+  box-sizing: border-box;
+}
+
+
+
+/* estilos individualizados */
+.btn-detail {
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  color: #1f2937;
+}
+.btn-add {
+  background: #0f8343;
+  color: white;
+}
+.btn-add:hover { background: var(--accent-dark); }
+
+/* Ajustes cuando sidebar está cerrado: contenido ocupa la mayor parte */
+.biblioteca-main.sidebar-closed .filters-sidebar { 
+  width: 56px; opacity: 0.95; 
+}
+.biblioteca-main.sidebar-closed .books-grid-section { 
+  width: 98%; margin-left: auto; transition: width 220ms ease, margin-left 220ms ease; 
+}
+
+
+.small-muted { 
+  color: #9ca3af; font-size: 13px; 
+}
+.no-results { 
+  padding: 36px; text-align: center; color: var(--muted);
+ }
+
+
+.books-grid-header > div:first-child { 
+  font-weight: 700; color: #111827; 
+}
+
+
+/* transición global para elementos que cambian */
+.filters-sidebar, .books-grid-section, .books-grid, .book-card {
+  transition: all 220ms ease;
+}
+
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.filters-sidebar {
+  width: 280px;
+}

@@ -1,0 +1,309 @@
+
+:root {
+  --bg-page: #f4f4f9;
+  --bg-panel: #ffffff;
+  --muted: #666666;
+  --text: #1a1a1a;
+  --accent-blue: #1e4a84;
+  --accent-yellow: #f9a825;
+  --card-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  --card-shadow-strong: 0 10px 30px rgba(0,0,0,0.12);
+  --radius-lg: 12px;
+  --radius-pill: 25px;
+  --max-width: 1100px;
+  --gutter: 20px;
+  box-sizing: border-box;
+}
+
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-page);
+  font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.page-container {
+  min-height: 100vh;
+  overflow-x: hidden; 
+  background-color: #eeeeee;
+}
+
+
+.detail-main {
+  max-width: var(--max-width);
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+
+.main-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: var(--text);
+}
+
+
+.book-container {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  flex-wrap: wrap; 
+}
+
+
+.book-image-section {
+  flex: 0 0 350px;
+  max-width: 100%;
+}
+.book-cover-detail {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: var(--card-shadow-strong);
+  object-fit: cover;
+  display: block;
+}
+
+
+.book-info-card {
+  flex: 1 1 420px;
+  background: var(--bg-panel);
+  padding: 32px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--card-shadow);
+}
+
+
+.book-title-detail {
+  font-size: 32px;
+  font-weight: 800;
+  margin: 0 0 18px 0;
+}
+
+.book-meta-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.meta-left,
+.meta-right {
+  min-width: 180px;
+}
+
+.book-specs p {
+  margin: 8px 0;
+  font-size: 15px;
+  color: #333;
+}
+
+.price-tag {
+  font-weight: 700;
+  margin-top: 8px;
+  color: #0d3a66;
+}
+
+
+.rating-summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.avg-stars { display: inline-flex; gap: 4px; align-items: center; }
+.avg-text { font-size: 14px; color: #333; }
+.reviews-count { font-size: 13px; color: var(--accent-blue); font-weight: 600; }
+
+
+.book-description {
+  margin-top: 22px;
+  line-height: 1.6;
+  color: #444;
+  font-size: 15px;
+  text-align: justify;
+}
+
+
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.btn-buy
+ {
+  width: 100%;
+  padding: 12px 16px;
+  border: none;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.btn-buy {
+  background-color: var(--accent-blue);
+  color: white;
+}
+
+
+
+.btn-buy:hover { 
+    opacity: .95; 
+}
+
+
+.pickup-info {
+  margin-top: 30px;
+}
+
+.pickup-info h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.pickup-info p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+
+.reviews-section-compact {
+  margin-top: 36px;
+  background: var(--bg-panel);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
+}
+
+
+.reviews-header-inline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.reviews-header-inline h3 {
+  font-size: 18px;
+  margin: 0;
+  font-weight: 700;
+}
+
+.reviews-count {
+  font-size: 13px;
+  color: var(--accent-blue);
+  font-weight: 600;
+  background: #eef2f7;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+  max-height: 380px;
+  overflow-y: auto;
+  padding-right: 8px;
+  margin-top: 12px;
+}
+
+
+.reviews-grid::-webkit-scrollbar { width: 7px; }
+.reviews-grid::-webkit-scrollbar-thumb { background: #d0d0d0; border-radius: 8px; }
+
+
+.review-card-mini {
+  background: #fbfbfb;
+  border: 1px solid #eee;
+  padding: 12px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.review-card-mini:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  border-color: var(--accent-blue);
+}
+
+
+.review-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+
+.stars-mini {
+  color: var(--accent-yellow);
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+
+.comment-mini {
+  font-size: 13px;
+  color: #333;
+  line-height: 1.4;
+  margin: 0;
+  display: -webkit-box;
+
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+
+.no-reviews-mini {
+  text-align: center;
+  color: #999;
+  font-size: 14px;
+  padding: 18px 0;
+}
+
+
+.star.filled { 
+  color: var(--accent-yellow); 
+}
+.star.empty  {
+   color: #ddd; 
+  }
+.stars-display {
+   display: inline-flex; gap: 4px; font-size: 16px;
+   }
+
+
+.site-header .badge-cart {
+   position: relative; 
+  }
+.carrito-empty {
+   text-align: center; padding: 24px; background: #fff; border-radius: 10px; 
+  }

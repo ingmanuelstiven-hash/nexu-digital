@@ -1,0 +1,63 @@
+.mislibros-main {
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+h1 {
+  font-weight: 800;
+  margin-bottom: 24px;
+  font-size: 28px;
+  color: #1e4a84;
+}
+
+.compras-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(220px,1fr));
+  gap: 20px;
+}
+
+.compra-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(16,24,40,0.06);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.compra-cover {
+  height: 260px;
+  background: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.compra-cover img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.compra-info {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.compra-title {
+  font-size: 16px;
+  font-weight: 800;
+  margin: 0;
+}
+
+.compra-fecha,
+.compra-valor {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+}
