@@ -1,9 +1,9 @@
-
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import "../styles/mislibros.css";
 import { useNavigate } from "react-router-dom";
+import useFetch from "../hooks/useFetch"; 
 
 const API_COMPRAS = "https://mock.apidog.com/m1/1193165-1187983-default/compras?id_usuario=10";
 
@@ -20,34 +20,14 @@ function resolveImageUrl(imagenField) {
 }
 
 export default function MisLibros() {
-  const [compras, setCompras] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  // CUSTOM HOOK 
+  const { data, loading, error } = useFetch(API_COMPRAS);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const fetchCompras = async () => {
-      setLoading(true);
-      setError(null);
-      try {
-        const res = await fetch(API_COMPRAS);
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        const json = await res.json();
-        const list = Array.isArray(json) ? json : (json.data || []);
-        setCompras(list);
-      } catch (err) {
-        console.error(err);
-        setError("No se pudieron cargar las compras");
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchCompras();
-  }, []);
+  
+  const compras = Array.isArray(data) ? data : (data?.data || []);
 
   const handleCardClick = (compra) => {
-    // Priorizar campos que puedan referirse al id del libro
     const bookId = compra.id_libro || compra.libro_id || compra.id;
     if (!bookId) {
       console.warn("No se encontró id de libro en la compra:", compra);
@@ -64,7 +44,7 @@ export default function MisLibros() {
   };
 
   if (loading) return <p style={{ textAlign: "center", padding: "50px" }}>Cargando tus adquisiciones...</p>;
-  if (error) return <p style={{ textAlign: "center", color: "red", padding: "50px" }}>{error}</p>;
+  if (error) return <p style={{ textAlign: "center", color: "red", padding: "50px" }}>Error: {error}</p>;
 
   return (
     <div className="page-wrapper mislibros-page">
@@ -113,7 +93,6 @@ export default function MisLibros() {
                       <p className="compra-fecha"><strong>Comprado el:</strong> {fechaCompra}</p>
                       <p className="compra-valor"><strong>Precio:</strong> ${Number(precioMostrado).toLocaleString()}</p>
                     </div>
-                    
                   </div>
                 </article>
               );
