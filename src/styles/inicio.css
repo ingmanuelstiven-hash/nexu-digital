@@ -159,17 +159,17 @@ font-family: 'Poppins', sans-serif;
 }
 
 .featured-grid-horizontal {
-  display: flex;
-  flex-wrap: wrap;           
-  justify-content: center;   
-  gap: 30px;                 
-  width: 98%;             
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);  
+  grid-template-rows: repeat(2, auto);
+  gap: 20px;                 
+  width: 95%;             
+  max-width: 1200px; 
   margin: 0 auto 50px auto;  
   padding: 20px 0;
 }
 
-.book-item-horizontal {
-  flex: 0 1 225px;         
+.book-item-horizontal {  
   background: #fff;
   border-radius: 15px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.05);
@@ -179,21 +179,16 @@ font-family: 'Poppins', sans-serif;
   flex-direction: column;
   gap: 12px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.book-item-horizontal:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  width: 100%; 
 }
 
 .book-image-horizontal {
   width: 100%;
-  height: 280px;             
+  height: 220px; 
   object-fit: cover;
   border-radius: 10px;
 }
 
-/* Titulo de libro */
 .book-title-horizontal {
   font-size: 16px;
   font-weight: 700;
@@ -243,33 +238,147 @@ font-family: 'Poppins', sans-serif;
   background-color: #163a6a;
 }
 
-.featured-grid-horizontal {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);  
-  grid-template-rows: repeat(2, auto);
-  gap: 20px;                 
-  width: 95%;             
-  max-width: 1200px; 
-  margin: 0 auto 50px auto;  
-  padding: 20px 0;
+/* Tablet grande  */
+@media screen and (max-width: 820px) {
+  .hero-banner h1 {
+    font-size: 36px;
+  }
+
+  .hero-banner p {
+    font-size: 18px;
+  }
+
+  .featured-grid {
+    gap: 25px;
+    padding: 0 30px 60px 30px;
+  }
+
+  .featured-grid-horizontal {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .book-image-horizontal {
+    height: 180px;
+  }
 }
 
-.book-item-horizontal {  
-  background: #fff;
-  border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-  padding: 15px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 100%; 
+/* Tablet pequeño  */
+@media screen and (max-width: 768px) {
+  .hero-banner {
+    padding: 60px 15px;
+  }
+
+  .hero-banner h1 {
+    font-size: 32px;
+  }
+
+  .nexus-description {
+    padding: 0 20px;
+  }
+
+  .featured-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 0 20px 50px 20px;
+  }
+
+  .featured-grid-horizontal {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .book-image-horizontal {
+    height: 160px;
+  }
+
+  .coworking-text h2 {
+    font-size: 28px;
+  }
+
+  .coworking-text p {
+    font-size: 16px;
+  }
 }
 
-.book-image-horizontal {
-  width: 100%;
-  height: 220px; 
-  object-fit: cover;
-  border-radius: 10px;
+/* Móvil  */
+@media screen and (max-width: 480px) {
+  .hero-banner {
+    padding: 40px 10px;
+  }
+
+  .hero-banner h1 {
+    font-size: 28px;
+  }
+
+  .hero-banner p {
+    font-size: 16px;
+  }
+
+  .nexus-description {
+    padding: 0 15px;
+    font-size: 16px;
+  }
+
+  .featured-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 15px;
+    padding: 0 15px 40px 15px;
+  }
+
+  .featured-grid-horizontal {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .book-image-horizontal {
+    height: 140px;
+  }
+
+  .book-title-horizontal {
+    font-size: 14px;
+  }
+
+  .btn-detail, .btn-add-cart {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}
+
+/* Móvil pequeño  */
+@media screen and (max-width: 375px) {
+  .hero-banner {
+    padding: 30px 8px;
+  }
+
+  .hero-banner h1 {
+    font-size: 24px;
+  }
+
+  .hero-banner p {
+    font-size: 14px;
+  }
+
+  .nexus-description h2 {
+    font-size: 24px;
+  }
+
+  .featured-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .featured-grid-horizontal {
+    grid-template-columns: 1fr;
+  }
+
+  .book-image-horizontal {
+    height: 120px;
+  }
+
+  .book-title-horizontal {
+    font-size: 13px;
+  }
+
+  .btn-detail, .btn-add-cart {
+    font-size: 11px;
+    padding: 5px 8px;
+  }
 }

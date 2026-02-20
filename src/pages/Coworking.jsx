@@ -5,6 +5,7 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import "../styles/coworking.css";
 import { useCart } from "../contexts/CartContext.jsx";
+import Loader from "../components/Loader.jsx";
 
 const API_COWORKING = "https://mock.apidog.com/m1/1193165-1187983-default/coworkingnew/spaces";
 
@@ -61,7 +62,9 @@ export default function Coworking() {
     navigate(`/coworking/${id}`);
   };
 
-  if (loading) return <div className="loader">Cargando espacios...</div>;
+if (loading) {
+  return <Loader message="Buscando los mejores libros para ti..." />;
+}
 
   return (
     <div className="coworking-page">

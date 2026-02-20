@@ -1,3 +1,4 @@
+/* === Estilo base === */
 .mislibros-main {
   max-width: 1100px;
   margin: 20px auto;
@@ -13,14 +14,14 @@ h1 {
 
 .compras-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill,minmax(220px,1fr));
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 20px;
 }
 
 .compra-card {
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(16,24,40,0.06);
+  box-shadow: 0 6px 18px rgba(16, 24, 40, 0.06);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -60,4 +61,106 @@ h1 {
   font-size: 14px;
   color: #6b7280;
   margin: 0;
+}
+
+
+/* Tablet grande  */
+@media screen and (max-width: 820px) {
+  .compras-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 16px;
+  }
+
+  .compra-cover {
+    height: 220px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+}
+
+/* Tablet pequeño  */
+@media screen and (max-width: 768px) {
+  .mislibros-main {
+    padding: 0 16px;
+  }
+
+  .compras-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 14px;
+  }
+
+  .compra-cover {
+    height: 200px;
+  }
+
+  .compra-title {
+    font-size: 14px;
+  }
+
+  .compra-fecha,
+  .compra-valor {
+    font-size: 12px;
+  }
+}
+
+/* Móvil grande  */
+@media screen and (max-width: 480px) {
+  .mislibros-main {
+    padding: 0 14px;
+  }
+
+  .compras-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+  }
+
+  .compra-cover {
+    height: 180px;
+  }
+
+  .compra-title {
+    font-size: 13px;
+  }
+
+  .compra-fecha,
+  .compra-valor {
+    font-size: 11px;
+  }
+}
+
+/* Móvil pequeño  */
+@media screen and (max-width: 375px) {
+  .mislibros-main {
+    padding: 0 12px;
+    margin: 16px auto;
+  }
+
+  h1 {
+    font-size: 22px;
+    margin-bottom: 16px;
+  }
+
+  .compras-grid {
+    grid-template-columns: 1fr; /* Una columna en móviles pequeños */
+    gap: 16px;
+  }
+
+  .compra-cover {
+    height: 160px;
+  }
+
+  .compra-info {
+    padding: 10px;
+  }
+
+  .compra-title {
+    font-size: 16px;
+  }
+
+  .compra-fecha,
+  .compra-valor {
+    font-size: 13px;
+  }
 }

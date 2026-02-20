@@ -5,7 +5,7 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import { useCart } from "../contexts/CartContext.jsx";
 import "../styles/coworkingde.css";
-
+import Loader from "../components/Loader.jsx";
 const API_SPACES = "https://mock.apidog.com/m1/1193165-1187983-default/coworkingnew/spaces";
 
 const imagesMap = import.meta.glob('../assets/*.{png,jpg,jpeg,webp,svg}', { eager: true, as: 'url' });
@@ -35,7 +35,9 @@ export default function CoworkingDetalle() {
       .catch(() => setLoading(false));
   }, [id]);
 
-  if (loading) return <div className="loader">Cargando detalles del espacio...</div>;
+if (loading) {
+  return <Loader message="Buscando los mejores libros para ti..." />;
+}
   if (!space) return <div className="container"><h3>Espacio no encontrado</h3><button onClick={() => navigate("/coworking")}>Volver</button></div>;
 
   const isLibre = space.estado.toLowerCase() === "libre";

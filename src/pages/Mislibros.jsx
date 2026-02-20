@@ -4,6 +4,7 @@ import Footer from "../components/footer";
 import "../styles/mislibros.css";
 import { useNavigate } from "react-router-dom";
 import useFetch from "../hooks/useFetch"; 
+import Loader from "../components/Loader.jsx";
 
 const API_COMPRAS = "https://mock.apidog.com/m1/1193165-1187983-default/compras?id_usuario=10";
 
@@ -43,7 +44,9 @@ export default function MisLibros() {
     }
   };
 
-  if (loading) return <p style={{ textAlign: "center", padding: "50px" }}>Cargando tus adquisiciones...</p>;
+ if (loading) {
+  return <Loader message="Buscando los mejores libros para ti..." />;
+}
   if (error) return <p style={{ textAlign: "center", color: "red", padding: "50px" }}>Error: {error}</p>;
 
   return (

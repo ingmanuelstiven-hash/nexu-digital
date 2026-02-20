@@ -307,3 +307,195 @@ html, body, #root {
 .carrito-empty {
    text-align: center; padding: 24px; background: #fff; border-radius: 10px; 
   }
+
+
+
+
+
+/* Tablet grande  */
+@media screen and (max-width: 820px) {
+  .detail-main {
+    padding: 0 16px;
+    margin: 30px auto;
+  }
+
+  .main-title {
+    font-size: 22px;
+  }
+
+  .book-image-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px; 
+  }
+    .book-cover-detail {
+    width: 300px; 
+    height: auto;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+    display: flex;
+   
+  }
+
+  .book-container {
+    gap: 30px;
+  }
+
+  .book-image-section {
+    flex: 0 0 300px;
+  }
+
+  .book-info-card {
+    padding: 24px;
+  }
+
+  .book-title-detail {
+    font-size: 28px;
+  }
+}
+
+/* Tablet pequeño  */
+@media screen and (max-width: 768px) {
+  .detail-main {
+    padding: 0 12px;
+    margin: 25px auto;
+  }
+
+  .book-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+.book-image-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px; 
+  }
+    .book-cover-detail {
+    width: 300px; 
+    height: auto;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+    display: flex;
+   
+  }
+
+  .book-info-card {
+    flex: 1 1 100%;
+    padding: 20px;
+  }
+
+  .book-title-detail {
+    font-size: 24px;
+  }
+
+  .book-meta-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .meta-left,
+  .meta-right {
+    min-width: auto;
+  }
+}
+
+/* Móvil  */
+@media screen and (max-width: 480px) {
+  .detail-main {
+    padding: 0 10px;
+    margin: 20px auto;
+  }
+
+  .main-title {
+    font-size: 20px;
+  }
+.book-image-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px; 
+  }
+
+  .book-cover-detail {
+    width: 250px; 
+    height: auto;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+  }
+
+  .book-info-card {
+    padding: 15px;
+    margin-top: -5px; 
+  }
+
+  .book-title-detail {
+    font-size: 19px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .book-description {
+    font-size: 13px;
+    line-height: 1.4;
+    margin-top: 10px;
+  }
+
+
+  .price-tag {
+    font-size: 16px;
+  }
+
+  .book-description {
+    font-size: 14px;
+  }
+
+  .btn-buy {
+    font-size: 14px;
+    padding: 10px 14px;
+  }
+
+  .pickup-info h3 {
+    font-size: 14px;
+  }
+
+  .pickup-info p {
+    font-size: 13px;
+  }
+}
+
+/* Móvil pequeño  */
+@media screen and (max-width: 375px) {
+  .detail-main {
+    padding: 0 8px;
+    margin: 15px auto;
+  }
+
+  .main-title {
+    font-size: 18px;
+  }
+
+  .book-title-detail {
+    font-size: 20px;
+  }
+
+  .book-info-card {
+    padding: 14px;
+  }
+
+  .book-description {
+    font-size: 13px;
+  }
+
+  .btn-buy {
+    font-size: 13px;
+    padding: 10px 12px;
+  }
+
+  .pickup-info h3 {
+    font-size: 13px;
+  }
+
+  .pickup-info p {
+    font-size: 12px;
+  }
+}

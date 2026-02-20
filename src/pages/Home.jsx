@@ -5,6 +5,7 @@ import "../styles/inicio.css";
 import { Link, useNavigate } from "react-router-dom";
 import coworkingImg from "../assets/coworking.png";
 import { useCart } from "../contexts/CartContext";
+import Loader from "../components/Loader.jsx";
 
 const API_BASE = "https://mock.apidog.com/m1/1193165-1187983-default/itemslib";
 
@@ -54,7 +55,9 @@ export default function Landing() {
     fetchBooks();
   }, []);
 
-  if (loading) return <p style={{ textAlign: "center" }}>Cargando libros...</p>;
+if (loading) {
+  return <Loader message="Buscando los mejores libros para ti..." />;
+}
   if (error) return <p style={{ textAlign: "center", color: "red" }}>{error}</p>;
 
   return (

@@ -171,6 +171,208 @@
   cursor: not-allowed;
 }
 
-@media (max-width: 900px) {
-  .detail-grid { grid-template-columns: 1fr; }
+
+
+/* Tablet grande  */
+@media screen and (max-width: 820px) {
+  .detail-container {
+    padding: 30px 15px;
+  }
+
+  .detail-title {
+    font-size: 30px;
+  }
+
+  .detail-price-box {
+    padding: 15px;
+  }
+
+  .price-value {
+    font-size: 24px;
+  }
+
+  .detail-stats {
+    gap: 15px;
+  }
+
+  .stat-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .stat-label {
+    font-size: 11px;
+  }
+
+  .stat-val {
+    font-size: 13px;
+  }
+
+  .detail-section h3 {
+    font-size: 16px;
+  }
+
+  .equip-list li {
+    font-size: 13px;
+  }
+
+  .btn-reserve-large {
+    padding: 16px;
+    font-size: 16px;
+  }
+}
+
+/* Tablet pequeño  */
+@media screen and (max-width: 768px) {
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-container {
+    padding: 25px 12px;
+  }
+
+  .detail-title {
+    font-size: 28px;
+  }
+
+  .detail-price-box {
+    padding: 12px;
+  }
+
+  .price-value {
+    font-size: 22px;
+  }
+
+  .detail-stats {
+    gap: 12px;
+  }
+
+  .stat-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+
+  .stat-label {
+    font-size: 10px;
+  }
+
+  .stat-val {
+    font-size: 12px;
+  }
+
+  .detail-section h3 {
+    font-size: 15px;
+  }
+
+  .equip-list li {
+    font-size: 12px;
+  }
+
+  .btn-reserve-large {
+    padding: 14px;
+    font-size: 15px;
+  }
+}
+
+/* Móvil  */
+@media screen and (max-width: 480px) {
+  .detail-container {
+    padding: 20px 10px;
+  }
+
+  .detail-title {
+    font-size: 24px;
+  }
+
+  .detail-price-box {
+    padding: 10px;
+  }
+
+  .price-value {
+    font-size: 20px;
+  }
+
+  .detail-stats {
+    gap: 10px;
+  }
+
+  .stat-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+
+  .stat-label {
+    font-size: 9px;
+  }
+
+  .stat-val {
+    font-size: 11px;
+  }
+
+  .detail-section h3 {
+    font-size: 14px;
+  }
+
+  .equip-list li {
+    font-size: 11px;
+  }
+
+  .btn-reserve-large {
+    padding: 12px;
+    font-size: 14px;
+  }
+}
+
+/* Móvil pequeño  */
+@media screen and (max-width: 375px) {
+  .detail-container {
+    padding: 15px 8px;
+  }
+
+  .detail-title {
+    font-size: 20px;
+  }
+
+  .detail-price-box {
+    padding: 8px;
+  }
+
+  .price-value {
+    font-size: 18px;
+  }
+
+  .detail-stats {
+    gap: 8px;
+  }
+
+  .stat-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
+
+  .stat-label {
+    font-size: 8px;
+  }
+
+  .stat-val {
+    font-size: 10px;
+  }
+
+  .detail-section h3 {
+    font-size: 13px;
+  }
+
+  .equip-list li {
+    font-size: 10px;
+  }
+
+  .btn-reserve-large {
+    padding: 10px;
+    font-size: 13px;
+  }
 }

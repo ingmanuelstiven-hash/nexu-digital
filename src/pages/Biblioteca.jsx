@@ -5,6 +5,7 @@ import Footer from "../components/footer";
 import "../styles/biblioteca.css";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../contexts/CartContext.jsx";
+import Loader from "../components/Loader.jsx";
 
 const API_BASE = "https://mock.apidog.com/m1/1193165-1187983-default/itemslib";
 
@@ -191,7 +192,9 @@ export default function Biblioteca() {
     setMaxPriceFilter(priceMaxFromData);
   };
 
-  if (loading) return <p style={{ textAlign: "center" }}>Cargando libros...</p>;
+if (loading) {
+  return <Loader message="Buscando los mejores libros para ti..." />;
+}
   if (error) return <p style={{ textAlign: "center", color: "red" }}>{error}</p>;
 
   return (
